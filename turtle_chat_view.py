@@ -1,9 +1,10 @@
-#2016-2017 PERSONAL PROJECTS: TurtleChat!
+#2016-2017 PERSONAL PROJECTS: TurtleChatd.run()
+
 #WRITE YOUR NAME HERE!
 #Gilead Balshayi!
 import turtle
 from turtle_chat_client import Client
-from turtle_chat_widgets import Button,
+from turtle_chat_widgets import Button, TextInput
 #####################################################################################
 #                                   IMPORTS                                         #
 #####################################################################################
@@ -38,6 +39,16 @@ from turtle_chat_widgets import Button,
 #
 #3. If you want to make a newline character (i.e. go to the next line), just add
 #   \r to your string.  Test it out at the Python shell for practice
+class TextBox(TextInput):
+    def draw_box(self):
+        print("wht to print?")
+    def write_msg(self):
+        print("hello")
+    
+    
+
+
+
 #####################################################################################
 #####################################################################################
 
