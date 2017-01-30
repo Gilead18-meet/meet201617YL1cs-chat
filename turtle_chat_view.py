@@ -41,10 +41,17 @@ from turtle_chat_widgets import Button, TextInput
 #   \r to your string.  Test it out at the Python shell for practice
 class TextBox(TextInput):
     def draw_box(self):
-        print("wht to print?")
+        turtle.penup()
+        turtle.goto(self.pos)
+        turtle.pendown()
+        turtle.goto(self.width,0)
+        turtle.goto(self.width,self.height)
+        turtle.goto(-self.width,self.height)
+        turtle.goto(-self.width,0)
+        turtle.goto(self.pos)
+        turtle.hideturtle()
     def write_msg(self):
-        print("hello")
-    
+        self.writer.write(self.new_msg)
     
 
 
@@ -69,7 +76,11 @@ class TextBox(TextInput):
 #      you send messages and update message displays.
 #####################################################################################
 #####################################################################################
-
+class Sendbutton(Button):
+    def fun(self, x=None, y=None):
+        print("Jello")
+    def __init__(self, view):
+        pass
 
 ##################################################################
 #                             View                               #
