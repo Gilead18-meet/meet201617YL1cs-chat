@@ -51,8 +51,9 @@ class TextBox(TextInput):
         turtle.goto(self.pos)
         turtle.hideturtle()
     def write_msg(self):
+        self.writer.clear()
         self.writer.write(self.new_msg)
-    
+        
 
 
 
@@ -64,8 +65,7 @@ class TextBox(TextInput):
 #####################################################################################
 #Make a class called SendButton, which will be a subclass of Button.
 #Button is an abstract class with one abstract method: fun.
-#fun gets called whenever the button is clicked.  It's jobs will be to
-#
+#fun gets called whenever the button is clicked.  It's jobs will be to#
 # 1. send a message to the other chat participant - to do this,
 #    you will need to call the send method of your Client instance
 # 2. update the messages that you see on the screen
@@ -76,10 +76,11 @@ class TextBox(TextInput):
 #      you send messages and update message displays.
 #####################################################################################
 #####################################################################################
-class Sendbutton(Button):
+class SendButton(Button):
     def fun(self, x=None, y=None):
         print("Jello")
     def __init__(self, view):
+        super (SendButton,self).__init__(self,my_turtle=None,shape=None,pos=(0,0)) 
         pass
 
 ##################################################################
