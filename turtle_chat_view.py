@@ -97,6 +97,7 @@ class View:
     _SCREEN_WIDTH=300
     _SCREEN_HEIGHT=600
     _LINE_SPACING=round(_SCREEN_HEIGHT/2/(_MSG_LOG_LENGTH+1))
+    
 
     def __init__(self,username='Me',partner_name='Partner'):
         '''
@@ -106,8 +107,12 @@ class View:
         ###
         #Store the username and partner_name into the instance.
         ###
+        self.username = username
+        self.partner_name = partner_name
+        
 
         #Make a new client object and store it in this instance.
+        self.my_client = Client(username, partner_name)
 
         #Set screen dimensions using turtle.setup
         #You can get help on this function, as with other turtle functions,
@@ -117,13 +122,14 @@ class View:
         #   help(turtle.setup)
         #
         #at the Python shell.
+        turtle.setup(_SCREEN_WIDTH, _SCREEN_HEIGHT)
 
         #This list will store all of the messages.
         #You can add strings to the front of the list using
         #   self.msg_queue.insert(0,a_msg_string)
         #or at the end of the list using
         #   self.msg_queue.append(a_msg_string)
-        self.msg_queue=[]
+        self.msg_queue = []
 
         ###
         #Create one turtle object for each message to display.
@@ -135,11 +141,13 @@ class View:
         #Create a TextBox instance and a SendButton instance and
         #Store them inside of this instance
         ###
-
+        self.textBox=TextBox()
+        self.sendButton=SendButton()
         ###
         #Call your setup_listeners() function, if you have one,
         #and any other remaining setup functions you have invented.
         ###
+        self.setup_listeners()
 
     def send_msg(self):
         '''
@@ -164,9 +172,12 @@ class View:
         The function that it will take is
         self.send_btn.fun
         where send_btn is the name of your button instance
+        
 
         Then, it can call turtle.listen()
         '''
+        # Probably create SendButton instance and use .click property. (no clue)
+        # ...
         pass
 
     def msg_received(self,msg):
