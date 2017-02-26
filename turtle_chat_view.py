@@ -78,6 +78,7 @@ class TextBox(TextInput):
 #####################################################################################
 class SendButton(Button):
     def fun(self, x=None, y=None):
+        insta=view(send_msg)
         print("Jello")
     def __init__(self, view):
         super (SendButton,self).__init__(self,my_turtle=None,shape=None,pos=(0,0)) 
