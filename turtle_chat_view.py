@@ -78,10 +78,10 @@ class TextBox(TextInput):
 #####################################################################################
 class SendButton(Button):
     def fun(self, x=None, y=None):
-        insta=view(send_msg)
-        print("Jello")
+        self.view.send_msg()
     def __init__(self, view):
         super (SendButton,self).__init__(self,my_turtle=None,shape=None,pos=(0,0)) 
+        self.view=view
         pass
 
 ##################################################################
