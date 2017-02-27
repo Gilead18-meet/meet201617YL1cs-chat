@@ -126,7 +126,11 @@ class View:
         #   help(turtle.setup)
         #
         #at the Python shell.
+<<<<<<< HEAD
         turtle.setup(self._SCREEN_WIDTH,self. _SCREEN_HEIGHT)
+=======
+        turtle.setup(_SCREEN_WIDTH, _SCREEN_HEIGHT)
+>>>>>>> a4b4861b06c33e407f1ab37e9e12fdc57f43fbd9
 
         #This list will store all of the messages.
         #You can add strings to the front of the list using
@@ -150,8 +154,12 @@ class View:
         #Store them inside of this instance
         ###
         self.textBox=TextBox()
+<<<<<<< HEAD
         self.sendButton=SendButton(self)
 
+=======
+        self.sendButton=SendButton()
+>>>>>>> a4b4861b06c33e407f1ab37e9e12fdc57f43fbd9
         ###
         #Call your setup_listeners() function, if you have one,
         #and any other remaining setup functions you have invented.
@@ -191,7 +199,11 @@ class View:
         '''
         # Probably create SendButton instance and use .click property. (no clue)
         # ...
+<<<<<<< HEAD
         
+=======
+        pass
+>>>>>>> a4b4861b06c33e407f1ab37e9e12fdc57f43fbd9
 
     def msg_received(self,msg):
         '''
